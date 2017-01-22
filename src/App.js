@@ -1,18 +1,35 @@
+
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import uuid from 'uuid';
+
 import './App.css';
+
+import './components/Notes/Notes';
+
+const notes = [
+  {
+    id: uuid.v4(),
+    task: 'Learn React'
+  },
+  {
+    id: uuid.v4(),
+    task: 'Do laundry'
+  }
+];
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Hello Wolrd!</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <button onClick={() => console.log('add note')}>+</button>
+        <ul>
+          {notes.map((note) => {
+           return (<li key={note.id}>
+            {note.task}
+           </li>)
+          })}
+        </ul>
+        <Notes />
       </div>
     );
   }
