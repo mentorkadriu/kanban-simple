@@ -1,7 +1,6 @@
 import React from 'react';
 
-
-export default class Notes extends React.Component {
+class Notes extends Component {
     
     render(){
         return (
@@ -9,3 +8,5 @@ export default class Notes extends React.Component {
         )
     }
 }
+
+export default Notes;
